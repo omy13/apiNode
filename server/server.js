@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(require('./routes/device'));
-mongoose.connect('mongodb://localhost:27017/devices',  {
+mongoose.connect('mongodb+srv://omar:tCTyeF0I5Gprglhu@cluster0-9sngf.mongodb.net/devices',  {
     useNewUrlParser: true,
     useUnifiedTopology: true
 },(error, res)=>{
