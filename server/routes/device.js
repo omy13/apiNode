@@ -3,7 +3,7 @@ const Device = require('../model/device');
 const cors = require('cors');
 
 const app = express(cors());
-
+app.options('*', cors());
 app.put('/device/:udid', function(req, res) {
     let udid = req.params.udid;
     let body = req.body;
