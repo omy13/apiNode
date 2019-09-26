@@ -1,5 +1,6 @@
 const express = require('express');
 const Device = require('../model/device');
+const cors = require('cors');
 
 const app = express();
 
@@ -19,8 +20,6 @@ app.put('/device/:udid', function(req, res) {
             deviceDB
         });
     });
-
-
 });
 
 app.get('/devices', function(req, res) {
