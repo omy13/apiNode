@@ -2,7 +2,7 @@ const express = require('express');
 const Device = require('../model/device');
 const cors = require('cors');
 
-const app = express();
+const app = express(cors());
 
 app.put('/device/:udid', function(req, res) {
     let udid = req.params.udid;
