@@ -21,6 +21,24 @@ app.put('/device/:udid', function(req, res) {
     });
 });
 
+app.delete('/device/:udid', function(req, res) {
+    let udid = req.params.udid;
+    let body = req.body;
+
+    Device.deleteOne({udid: udid}, (error, deviceDB) =>{
+        if(error){
+            res.status(400).json({
+                ok: false,
+                error
+            })
+        }
+        res.json({
+            ok: true,
+            deviceDB
+        });
+    });
+});
+
 app.get('/devices', function(req, res) {
     //let udid = req.params.udid;
 
@@ -51,7 +69,7 @@ app.get('/device/:udid', function(req, res) {
     let udid = req.params.udid;
 
     Device.find({
-        platformVersion: udid
+        udid: udid
     })
         .exec((error, devices) =>{
             if(error){
