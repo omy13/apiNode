@@ -17,6 +17,10 @@ let deviceSchema = new Scheme({
     inUse:{
         type: Boolean,
         default: false
+    },
+    connected:{
+        type: Boolean,
+        default: false
     }
 });
 
